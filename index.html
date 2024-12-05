@@ -24,6 +24,9 @@
             justify-content: space-between;
             align-items: center;
         }
+        .logo {
+            border: none;
+        }
         .hamburger-icon {
             display: none;
             cursor: pointer;
@@ -42,12 +45,13 @@
             font-weight: bold;
         }
         .hero-section {
-            background: url('assets/images/quick-search-bg.jpg') no-repeat center center;
+            background: url('assets/images/quick-search-bg.jpeg') no-repeat center center;
             background-size: cover;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
             color: #fff;
             text-align: center;
         }
@@ -81,6 +85,12 @@
             cursor: pointer;
             font-weight: bold;
             color: #fff;
+        }
+        .search-button-overlay {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
         }
         .features-section {
             display: flex;
@@ -130,54 +140,31 @@
             border-radius: 10px;
             margin-bottom: 15px;
         }
-        .testimonial-section {
-            padding: 60px;
-            background-color: #ffffff;
-            text-align: center;
-        }
-        .testimonial-section h2 {
-            font-family: 'Raleway', sans-serif;
-            margin-bottom: 40px;
-            color: #1e90ff;
-        }
-        .testimonial {
-            display: inline-block;
-            max-width: 600px;
-            text-align: left;
-            margin-top: 20px;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .testimonial img {
-            border-radius: 50%;
-            float: left;
-            margin-right: 15px;
-        }
-        footer {
-            background-color: #1e90ff;
-            color: #fff;
-            padding: 30px;
-            text-align: center;
-        }
         .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            text-align: center;
+            padding: 20px;
+            background-color: #1e90ff;
+        }
+        .footer-links-section {
+            background-color: #0c4c8a;
+            padding: 20px;
+            text-align: center;
         }
         .footer-links {
             list-style: none;
-            display: flex;
-            gap: 20px;
+            padding: 0;
+        }
+        .footer-links li {
+            display: inline;
+            margin-right: 15px;
         }
         .footer-links a {
             color: #fff;
             text-decoration: none;
         }
-        .footer-info p {
-            margin: 5px 0;
+        .copyright {
+            color: #fff;
+            margin-top: 20px;
         }
         @media (max-width: 1012px) {
             .hamburger-icon {
@@ -197,53 +184,25 @@
                 display: flex;
             }
         }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background-color: #1e90ff;
-                position: absolute;
-                top: 70px;
-                right: 20px;
-                padding: 20px;
-                border-radius: 8px;
-            }
-            .nav-links.show {
-                display: flex;
-            }
-        }
         @media (max-width: 768px) {
             .hero-content {
                 padding: 20px;
                 font-size: 1.5em;
             }
-            .hamburger-icon {
-                display: block;
-            }
-        }
         }
         @media (max-width: 544px) {
             .hero-content {
                 padding: 15px;
                 font-size: 1.2em;
             }
-            .hamburger-icon {
-                display: block;
-            }
         }
-        }
-            .search-button-overlay {
-            position: absolute;
-            bottom: 20%;
-            left: 50%;
-            transform: translate(-50%, 0);
-        }
-        </style>
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <img src="assets/images/delta-logo-white.png" alt="Delta Media Group Logo" width="150" style="border: none;">
+                <img src="assets/images/delta-logo-white.png" alt="Delta Media Group Logo" width="150">
             </div>
             <div class="hamburger-icon">
                 <img src="assets/images/icon-hamburger.png" alt="Hamburger Menu" width="48">
@@ -263,11 +222,16 @@
     </header>
 
     <section class="hero-section">
-        
+        <div class="hero-content">
+            <h1>Welcome Home</h1>
+            <p>Find your next home in the Canton, Ohio area</p>
+            <form class="search-form">
+                <input type="text" placeholder="Enter a City, School District, or Zip Code">
+                <button type="submit">Search</button>
+            </form>
             <div class="search-button-overlay">
                 <img src="assets/images/search-button.jpg" alt="Search Button" width="155" height="39">
             </div>
-            
         </div>
     </section>
 
@@ -346,53 +310,31 @@
                 <p>$340,000</p>
                 <p>Beds: 4 • Baths: 2</p>
             </div>
-        </div>
-            <div class="listing">
-                <img src="assets/images/featured-home.jpg" alt="House Listing">
-                <p>1234 Main Street Canton, OH</p>
-                <p>$340,000</p>
-                <p>Beds: 4 • Baths: 2</p>
-            </div>
-            <div class="listing">
-                <img src="assets/images/featured-home.jpg" alt="House Listing">
-                <p>1234 Main Street Canton, OH</p>
-                <p>$340,000</p>
-                <p>Beds: 4 • Baths: 2</p>
-            </div>
-      </div>
+                </div>
     </section>
 
-    
-
-<footer>
+    <footer>
         <div class="footer-content">
             <div class="footer-logo">
                 <img src="assets/images/delta-logo-white.png" alt="Delta Media Group Logo" width="150">
             </div>
-            <div class="footer-info">
-                <p>Delta Office</p>
-                <p>4726 Hills and Dales Rd. NW<br>Canton, OH 44708</p>
-                <p>Phone: 330-493-0350<br>Toll Free: 866-233-9833</p>
-            </div>
-            <div class="footer-icons">
-                <img src="assets/images/icon-realtor.jpg" alt="Realtor Icon" width="50">
-                <img src="assets/images/icon-equal-housing.jpg" alt="Equal Housing Icon" width="50">
-            </div>
+        </div>
+        <div class="footer-links-section">
             <ul class="footer-links">
                 <li><a href="#">Agents Only Login</a></li>
                 <li><a href="#">Disclaimer</a></li>
                 <li><a href="#">Terms of Use</a></li>
                 <li><a href="#">ADA Accessibility</a></li>
             </ul>
+            <p class="copyright">This site is hosted, designed, and copyrighted © 1994 - 2023 by Delta Media Group, Inc. -- Patent Pending --</p>
         </div>
-        <p class="copyright">This site is hosted, designed, and copyrighted © 1994 - 2023 by Delta Media Group, Inc. -- Patent Pending --</p>
     </footer>
-  
-<script>
+
+    <script>
         document.querySelector('.hamburger-icon').addEventListener('click', function() {
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.toggle('show');
         });
     </script>
-    </body>
+</body>
 </html>
