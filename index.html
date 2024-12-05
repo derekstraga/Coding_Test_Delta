@@ -15,7 +15,6 @@
             color: #333;
         }
         header {
-            background-color: #1e90ff;
             color: #fff;
             padding: 20px;
         }
@@ -124,7 +123,7 @@
         }
         .listing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
         .listing {
@@ -199,7 +198,7 @@
     </style>
 </head>
 <body>
-    <header style="background-color: transparent;">
+    <header style="background-color: transparent; position: absolute; width: 100%; top: 0;">
         <nav>
             <div class="logo">
                 <img src="assets/images/delta-logo-white.png" alt="Delta Media Group Logo" width="150">
@@ -305,14 +304,17 @@
 
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">
-                <img src="assets/images/delta-logo-white.png" alt="Delta Media Group Logo" width="150">
-                <p>Delta Office</p>
-                <p>4726 Hills and Dales Rd. NW<br>Canton, OH 44708</p>
-                <p>Phone: 330-493-0350<br>Toll Free: 866-233-9833</p>
+            
+                <p style="color: #ffffff;">
+                <p style="color: #ffffff;">4726 Hills and Dales Rd. NW<br>Canton, OH 44708</p>
+                <p style="color: #ffffff;">Phone: 330-493-0350<br>Toll Free: 866-233-9833</p>
             </div>
         </div>
-        <div class="footer-links-section">
+        <div class="footer-icons" style="text-align: center; margin-bottom: 10px;">
+            <img src="assets/images/icon-realtor.jpg" alt="Realtor Icon" width="50" style="margin-right: 10px;">
+            <img src="assets/images/icon-equal-housing.jpg" alt="Equal Housing Icon" width="50">
+        </div>
+        
             <ul class="footer-links">
                 <li><a href="#">Agents Only Login</a></li>
                 <li><a href="#">Disclaimer</a></li>
