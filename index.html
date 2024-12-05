@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Media Group</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links li {
+            display: inline;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .hero-section {
+            background: url('assets/images/quick-search-bg.jpeg') no-repeat center center;
+            background-size: cover;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+        .hero-content {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .search-form {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .search-form input {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 4px;
+        }
+        .search-form button {
+            background-color: #007BFF;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .features-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px;
+            background-color: #f4f4f4;
+        }
+        .feature {
+            text-align: center;
+        }
+        .featured-listings {
+            padding: 40px;
+            text-align: center;
+        }
+        .listing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .listing {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/images/logo.jpg" alt="Delta Media Group Logo" width="150">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Search Properties</a></li>
+                <li><a href="#">Buying</a></li>
+                <li><a href="#">Selling</a></li>
+                <li><a href="#">Agents</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="tel:330-555-5555">330-555-5555</a></li>
+                <li><a href="#">Sign Up / Login</a></li>
+                <li><a href="#"><img src="assets/images/icon-twitter.jpg" alt="Twitter Icon" width="48" height="48"></a></li>
+                <li><a href="#"><img src="assets/images/icon-youtube.jpg" alt="YouTube Icon" width="48" height="48"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome Home</h1>
+            <p>Find your next home in the Canton, Ohio area</p>
+            <form class="search-form">
+                <input type="text" placeholder="Enter a City, School District, or Zip Code">
+                <button type="submit">
+                    <img src="assets/images/search-button.jpg" alt="Search Button Icon" width="40" height="40">
+                </button>
+                <button class="search-near-me">
+                    <img src="assets/images/near-me-button.jpg" alt="Search Near Me Button" width="155" height="39">
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="feature">
+            <img src="assets/images/open-houses-icon.jpg" alt="Open Houses Icon" width="48">
+            <h3>Open Houses</h3>
+            <p>Plan your weekend home hunting by exploring our upcoming open houses.</p>
+        </div>
+        <div class="feature">
+            <img src="assets/images/create-account-icon.jpg" alt="Create Account Icon" width="48">
+            <h3>Create Account</h3>
+            <p>Sign up and be the first to see the newest listings emailed daily.</p>
+        </div>
+        <div class="feature">
+            <img src="assets/images/search-map-icon.jpg" alt="Search by Map Icon" width="48">
+            <h3>Search by Map</h3>
+            <p>Find the perfect neighborhood with our advanced map search.</p>
+        </div>
+    </section>
+
+    <section class="featured-listings">
+        <h2>Featured Listings</h2>
+        <div class="listing-grid">
+            <div class="listing">
+                <img src="assets/images/house-image.jpg" alt="House Listing">
+                <p>1234 Main Street Canton, OH</p>
+                <p>$340,000</p>
+                <p>Beds: 4 • Baths: 2</p>
+            </div>
+            <!-- Repeat listing as necessary -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="/assets/images/logo.jpg" alt="Delta Media Group Logo" width="150">
+            </div>
+            <div class="footer-info">
+                <p>Delta Office</p>
+                <p>4726 Hills and Dales Rd. NW<br>Canton, OH 44708</p>
+                <p>Phone: 330-493-0350<br>Toll Free: 866-233-9833</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">Agents Only Login</a></li>
+                <li><a href="#">Disclaimer</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">ADA Accessibility</a></li>
+            </ul>
+        </div>
+        <p class="copyright">This site is hosted, designed, and copyrighted © 1994 - 2023 by Delta Media Group, Inc. -- Patent Pending --</p>
+    </footer>
+  
+</body>
+</html>
