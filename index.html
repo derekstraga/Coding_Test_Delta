@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delta Media Group</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #f5f5f5;
+            color: #333;
         }
         header {
-            background-color: #333;
+            background-color: #1e90ff;
             color: #fff;
-            padding: 10px;
+            padding: 20px;
         }
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+        .hamburger-icon {
+            display: none;
+            cursor: pointer;
         }
         .nav-links {
             list-style: none;
@@ -32,11 +39,12 @@
         .nav-links a {
             color: #fff;
             text-decoration: none;
+            font-weight: bold;
         }
         .hero-section {
-            background: url('assets/images/quick-search-bg.jpeg') no-repeat center center;
+            background: url('assets/images/quick-search-bg.jpg') no-repeat center center;
             background-size: cover;
-            height: 500px;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -44,55 +52,113 @@
             text-align: center;
         }
         .hero-content {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .hero-content h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 3em;
+            margin: 0;
         }
         .search-form {
-            margin-top: 20px;
+            margin-top: 30px;
             display: flex;
             gap: 10px;
         }
         .search-form input {
-            padding: 10px;
-            width: 300px;
+            padding: 15px;
+            width: 350px;
             border: none;
             border-radius: 4px;
+            font-size: 1em;
         }
         .search-form button {
-            background-color: #007BFF;
+            background-color: #ff9900;
             border: none;
-            padding: 10px;
+            padding: 15px;
             border-radius: 4px;
             cursor: pointer;
+            font-weight: bold;
+            color: #fff;
         }
         .features-section {
             display: flex;
             justify-content: space-around;
-            padding: 40px;
-            background-color: #f4f4f4;
+            padding: 60px;
+            background-color: #ffffff;
         }
         .feature {
             text-align: center;
+            max-width: 300px;
+        }
+        .feature img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        .feature h3 {
+            font-family: 'Raleway', sans-serif;
+            color: #1e90ff;
+            margin-bottom: 10px;
         }
         .featured-listings {
-            padding: 40px;
+            padding: 60px;
             text-align: center;
+            background-color: #f0f8ff;
+        }
+        .featured-listings h2 {
+            font-family: 'Raleway', sans-serif;
+            margin-bottom: 40px;
+            color: #1e90ff;
         }
         .listing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 30px;
         }
         .listing {
+            background-color: #ffffff;
             border: 1px solid #ddd;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .listing img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .testimonial-section {
+            padding: 60px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+        .testimonial-section h2 {
+            font-family: 'Raleway', sans-serif;
+            margin-bottom: 40px;
+            color: #1e90ff;
+        }
+        .testimonial {
+            display: inline-block;
+            max-width: 600px;
+            text-align: left;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial img {
+            border-radius: 50%;
+            float: left;
+            margin-right: 15px;
         }
         footer {
-            background-color: #333;
+            background-color: #1e90ff;
             color: #fff;
-            padding: 20px;
+            padding: 30px;
             text-align: center;
         }
         .footer-content {
@@ -110,13 +176,77 @@
             color: #fff;
             text-decoration: none;
         }
-    </style>
+        .footer-info p {
+            margin: 5px 0;
+        }
+        @media (max-width: 1012px) {
+            .hamburger-icon {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #1e90ff;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                padding: 20px;
+                border-radius: 8px;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+        }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #1e90ff;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                padding: 20px;
+                border-radius: 8px;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 20px;
+                font-size: 1.5em;
+            }
+            .hamburger-icon {
+                display: block;
+            }
+        }
+        }
+        @media (max-width: 544px) {
+            .hero-content {
+                padding: 15px;
+                font-size: 1.2em;
+            }
+            .hamburger-icon {
+                display: block;
+            }
+        }
+        }
+            .search-button-overlay {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <img src="assets/images/delta-logo-white.jpg" alt="Delta Media Group Logo" width="150">
+                <img src="assets/images/delta-logo-white.png" alt="Delta Media Group Logo" width="150" style="border: none;">
+            </div>
+            <div class="hamburger-icon">
+                <img src="assets/images/icon-hamburger.png" alt="Hamburger Menu" width="48">
             </div>
             <ul class="nav-links">
                 <li><a href="#">Search Properties</a></li>
@@ -133,34 +263,27 @@
     </header>
 
     <section class="hero-section">
-        <div class="hero-content">
-            <h1>Welcome Home</h1>
-            <p>Find your next home in the Canton, Ohio area</p>
-            <form class="search-form">
-                <input type="text" placeholder="Enter a City, School District, or Zip Code">
-                <button type="submit">
-                    <img src="assets/images/search-button.jpg" alt="Search Button Icon" width="40" height="40">
-                </button>
-                <button class="search-near-me">
-                    <img src="assets/images/near-me-button.jpg" alt="Search Near Me Button" width="155" height="39">
-                </button>
-            </form>
+        
+            <div class="search-button-overlay">
+                <img src="assets/images/search-button.jpg" alt="Search Button" width="155" height="39">
+            </div>
+            
         </div>
     </section>
 
     <section class="features-section">
         <div class="feature">
-            <img src="assets/images/icon-open-house.jpg" alt="Open Houses Icon" width="48">
+            <img src="assets/images/icon-open-house.jpg" alt="Open Houses Icon" width="60">
             <h3>Open Houses</h3>
             <p>Plan your weekend home hunting by exploring our upcoming open houses.</p>
         </div>
         <div class="feature">
-            <img src="assets/images/icon-create-account.jpg" alt="Create Account Icon" width="48">
+            <img src="assets/images/icon-create-account.jpg" alt="Create Account Icon" width="60">
             <h3>Create Account</h3>
             <p>Sign up and be the first to see the newest listings emailed daily.</p>
         </div>
         <div class="feature">
-            <img src="assets/images/icon-map-search.jpg" alt="Search by Map Icon" width="48">
+            <img src="assets/images/icon-search-map.jpg" alt="Search by Map Icon" width="60">
             <h3>Search by Map</h3>
             <p>Find the perfect neighborhood with our advanced map search.</p>
         </div>
@@ -175,19 +298,85 @@
                 <p>$340,000</p>
                 <p>Beds: 4 • Baths: 2</p>
             </div>
-            <!-- Repeat listing as necessary -->
+            <div class="listing">
+                <img src="assets/images/featured-home.jpg" alt="House Listing">
+                <p>1234 Main Street Canton, OH</p>
+                <p>$340,000</p>
+                <p>Beds: 4 • Baths: 2</p>
+            </div>
+            <div class="listing">
+                <img src="assets/images/featured-home.jpg" alt="House Listing">
+                <p>1234 Main Street Canton, OH</p>
+                <p>$340,000</p>
+                <p>Beds: 4 • Baths: 2</p>
+            </div>
+            <div class="listing">
+                <img src="assets/images/featured-home.jpg" alt="House Listing">
+                <p>1234 Main Street Canton, OH</p>
+                <p>$340,000</p>
+                <p>Beds: 4 • Baths: 2</p>
+            </div>
+            <div class="listing">
+                <img src="assets/images/featured-home.jpg" alt="House Listing">
+                <p>1234 Main Street Canton, OH</p>
+                <p>$340,000</p>
+                <p>Beds: 4 • Baths: 2</p>
+            </div>
+            <div class="listing">
+                <img src="assets/images/featured-home.jpg" alt="House Listing">
+                <p>1234 Main Street Canton, OH</p>
+                <p>$340,000</p>
+                <p>Beds: 4 • Baths: 2</p>
+            </div>
+            <div class="listing">
+                <img src="assets/images/featured-home.jpg" alt="House Listing">
+                <p>1234 Main Street Canton, OH</p>
+                <p>$340,000</p>
+                <p>Beds: 4 • Baths: 2</p>
+            </div>
+            <div class="listing">
+                <img src="assets/images/featured-home.jpg" alt="House Listing">
+                <p>1234 Main Street Canton, OH</p>
+                <p>$340,000</p>
+                <p>Beds: 4 • Baths: 2</p>
+            </div>
+            <div class="listing">
+                <img src="assets/images/featured-home.jpg" alt="House Listing">
+                <p>1234 Main Street Canton, OH</p>
+                <p>$340,000</p>
+                <p>Beds: 4 • Baths: 2</p>
+            </div>
         </div>
+            <div class="listing">
+                <img src="assets/images/featured-home.jpg" alt="House Listing">
+                <p>1234 Main Street Canton, OH</p>
+                <p>$340,000</p>
+                <p>Beds: 4 • Baths: 2</p>
+            </div>
+            <div class="listing">
+                <img src="assets/images/featured-home.jpg" alt="House Listing">
+                <p>1234 Main Street Canton, OH</p>
+                <p>$340,000</p>
+                <p>Beds: 4 • Baths: 2</p>
+            </div>
+      </div>
     </section>
 
-    <footer>
+    
+
+<footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="/assets/images/delta-logo-white.jpg" alt="Delta Media Group Logo" width="150">
+                <img src="assets/images/delta-logo-white.png" alt="Delta Media Group Logo" width="150">
             </div>
             <div class="footer-info">
                 <p>Delta Office</p>
                 <p>4726 Hills and Dales Rd. NW<br>Canton, OH 44708</p>
                 <p>Phone: 330-493-0350<br>Toll Free: 866-233-9833</p>
+            </div>
+            <div class="footer-icons">
+                <img src="assets/images/icon-realtor.jpg" alt="Realtor Icon" width="50">
+                <img src="assets/images/icon-equal-housing.jpg" alt="Equal Housing Icon" width="50">
             </div>
             <ul class="footer-links">
                 <li><a href="#">Agents Only Login</a></li>
@@ -199,5 +388,11 @@
         <p class="copyright">This site is hosted, designed, and copyrighted © 1994 - 2023 by Delta Media Group, Inc. -- Patent Pending --</p>
     </footer>
   
-</body>
+<script>
+        document.querySelector('.hamburger-icon').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        });
+    </script>
+    </body>
 </html>
